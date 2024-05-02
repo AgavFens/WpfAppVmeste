@@ -18,8 +18,8 @@
             </Grid>
             <Button.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Открыть день"/>
-                    <MenuItem Header="Очистить день"/>
+                    <MenuItem Header="Открыть день" Command="{Binding OpenPageViborPersonaja}"/>
+                    <MenuItem Header="Очистить день" Command="{Binding ClearDayCommand}"/>
                 </ContextMenu>
             </Button.ContextMenu>
         </Button>
