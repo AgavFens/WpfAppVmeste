@@ -1,24 +1,25 @@
-﻿<UserControl x:Class="WpfAppVmeste.UserControl1"
+﻿<UserControl x:Class="WpfAppVmeste.View.UserControlCard"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfAppVmeste"
+             xmlns:local="clr-namespace:WpfAppVmeste.View"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="200">
     <Grid Background="White" Margin="10" MaxHeight="100" MaxWidth="100" MinHeight="100" MinWidth="100">
-        <Button>
+        <Button Height="100" Width="100" Command="{Binding OpenPageViborPersonaja}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30*"/>
                     <RowDefinition Height="70*"/>
                 </Grid.RowDefinitions>
-                <Label x:Name="dayLabel" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" FontWeight="Bold" Content="{Binding DayInLabel}"></Label>
-                <Image Grid.Row="1" Source="\images\8bde06daf2250f38d8c1625e4cb133a9.jpg"/>
+                <Label x:Name="Labele" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold" Content="{Binding DayInLabel}" Foreground="White"></Label>
+                <Image Grid.Row="1" Source="{Binding ImageInButton}"/>
             </Grid>
             <Button.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Показать число" Click="MenuItem_Click"/>
+                    <MenuItem Header="Открыть день"/>
+                    <MenuItem Header="Очистить день"/>
                 </ContextMenu>
             </Button.ContextMenu>
         </Button>

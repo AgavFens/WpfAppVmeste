@@ -10,18 +10,26 @@ namespace WpfAppVmeste
 {
     internal class JSONchik
     {
-        public static void mySerialize<T>(T notebook)
+        public static void mySerialize<T>(T list)
         {
             string PathToDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\6 практическая.json";
-            string json = JsonConvert.SerializeObject(notebook);
+            if (!File.Exists(PathToDesktop))
+            {
+                File.Create(PathToDesktop).Close();
+            }
+            string json = JsonConvert.SerializeObject(list);
             File.WriteAllText(PathToDesktop, json);
         }
         public static T myDeserialize<T>()
         {
             string PathToDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\6 практическая.json";
+            if (!File.Exists(PathToDesktop))
+            {
+                File.Create(PathToDesktop).Close();
+            }
             string json = File.ReadAllText(PathToDesktop);
-            T notebookdeser = JsonConvert.DeserializeObject<T>(json);
-            return notebookdeser;
+            T list = JsonConvert.DeserializeObject<T>(json);
+            return list;
         }
     }
 }

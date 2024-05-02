@@ -12,17 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppVmeste.ViewModel;
 
-namespace WpfAppVmeste
+namespace WpfAppVmeste.View
 {
-    /// <summary>
-    /// Логика взаимодействия для UserControl1.xaml
-    /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class UserControlCard : UserControl
     {
-        public UserControl1()
+        public UserControlCard(DateTime currentDate)
         {
             InitializeComponent();
+            DataContext = new UserControlCardViewModel(currentDate);
         }
     }
 }

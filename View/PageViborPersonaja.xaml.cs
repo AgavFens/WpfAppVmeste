@@ -12,14 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppVmeste.ViewModel;
 
 namespace WpfAppVmeste.View
 {
     public partial class PageViborPersonaja : Page
     {
-        public PageViborPersonaja()
+        public PageViborPersonaja(DateTime fullDate)
         {
             InitializeComponent();
+            DataContext = new PageViborViewModel(fullDate);
         }
     }
 }

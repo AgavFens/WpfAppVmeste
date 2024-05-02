@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppVmeste"
+        xmlns:card="clr-namespace:WpfAppVmeste.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -18,11 +19,11 @@
                 <ColumnDefinition Width="70*"/>
                 <ColumnDefinition Width="15*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="BeforeDateButton" Click="BeforeDateButton_Click">Назад</Button>
-            <Button x:Name="AfterDateButton" Grid.Column="2" Click="AfterDateButton_Click">Вперед</Button>
-            <Label x:Name="DateNowLabel" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"></Label>
+            <Button x:Name="BeforeDateButton" Command="{Binding BeforeDateButtonCommand}">Назад</Button>
+            <Button x:Name="AfterDateButton" Grid.Column="2" Command="{Binding AfterDateButtonCommand}" Content="{Binding AfterDateButtonContent}"></Button>
+            <Label x:Name="DateNowLabel" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Content="{Binding DateNow}"></Label>
         </Grid>
         <Separator Grid.Row="1" VerticalAlignment="Top"/>
-        <Frame></Frame>
+        <Frame Content="{Binding PageFrame}" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

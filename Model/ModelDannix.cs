@@ -9,6 +9,7 @@ namespace WpfAppVmeste
     internal class ModelDannix
     {
         public DateTime dateTime { get; set; }
+        public string PathToLastImage { get; set; }
         public bool checkbox_1 { get; set; }
         public bool checkbox_2 { get; set; }
         public bool checkbox_3 { get; set; }
